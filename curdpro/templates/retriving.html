@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>Retriving Data</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+{% if products %}
+<h1 class="text-center">Sainiks Details Here</h1>
+<table class="table table-bordered text-center">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Constituecy</th>
+        <th>District</th>
+        <th>Mobile</th>
+        <th>State</th>
+    </tr>
+    </thead>
+    {% for i in products %}
+    <tbody>
+    <tr>
+        <td>{{ i.name }}</td>
+        <td>{{ i.Address }}</td>
+        <td>{{ i.Constituecy }}</td>
+        <td>{{ i.District }}</td>
+        <td>{{ i.mobile }}</td>
+        <td>{{ i.state }}</td>
+    </tr>
+    </tbody>
+    {% endfor %}
+</table>
+{% else %}
+<h2>Sorry Sainiks Invalid Data</h2>
+{% endif %}
+
+</body>
+</html>
